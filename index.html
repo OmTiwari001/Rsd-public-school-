@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.S.D PUBLIC SCHOOL</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styling */
+header {
+    background: linear-gradient(to right, #0073e6, #00c6ff);
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+.adr-content {
+    margin-top: -35px;
+}
+
+.logo {
+    width: 50px;  /* Adjust size as needed */
+    height: auto;
+    margin-right: 5px;
+}
+        /* Navigation */
+        nav {
+            display: flex;
+            flex-direction: row;
+            background-color: #00509e;
+            padding: 9px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ffcc00;
+            color: #00509e;
+        }
+
+        /* Main Content */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            width: 90%;
+            text-align: center;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            color: #0073e6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        /* Image Slider */
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            display: block;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slide-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .slide-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 600px) {
+            nav {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            .card {
+                width: 45%;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .card {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="429023608_1051069899331823_1035463545075812407_n - 2025-03-08T154908.504.heic.jpg" class="logo">
+        <h1>R.S.D Public School</h1>
+    </div>
+    <div class="adr-content">
+        <h3>Haldirampur,Ballia(U.P)</h3>
+    </div>
+        
+</header>
+    <hr>
+            
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="https://youtube.com/@rsdpublicschoolhaldirampurball?si=ItWu4imCLZpRVZn5">Youtube</a>
+    <a href="https://www.instagram.com/r_s_d_public_school?igsh=YzljYTk1ODg3Zg==">Instagram</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- Image Slider -->
+<div class="slider">
+    <div class="slides">
+        <img src="IMG20250308125637.jpg" alt="School Image 1" border="0">
+        <img src="IMG20250308124624.jpg" alt="School Image 2" border="0">
+        <img src="IMG_20250308_130742.jpg" alt="School Image 3" border="0">
+    </div>
+    <button class="slide-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="slide-btn next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<div class="content">
+    <div class="card">
+        <h3>About Us</h3>
+        <p>R.S.D Public school
+            Haldirampur,Ballia,U.P<br>
+            </p>
+        <details>
+            <summary>Our Mission</summary>
+            <p>Our mission is to provide a holistic education that prepares students for success in academics, careers, and beyond, while instilling in them the values of integrity, respect, and social responsibility.</p>
+        </details><hr>
+        <details>
+            <summary>Our Vision</summary>
+            <p>Our vision is to empower students to become compassionate, curious, and courageous individuals who are equipped to succeed in an ever-changing world. With a talented and dedicated faculty, state-of-the-art facilities, and a nurturing environment, we strive to create a community that values diversity, promotes critical thinking, and inspires a love of learning. </p>
+        </details><hr>
+        <details>
+            <summary>Our Commitment</summary>
+            <p>At R.S.D Public School, we are committed to providing a world-class education that fosters academic excellence, creativity, and character development. </p>
+        </details>
+    </div>
+    <div class="card">
+        <h3>Admissions</h3>
+        <p>Join our school today and start your journey to success.</p>
+    </div>
+    <div class="card">
+        <h3>Events</h3>
+        <p>Stay updated with exciting school events and programs.</p>
+    </div>
+    <div class="card">
+        <h3>Contact</h3>
+        <p>For any inquiries and support
+            mobile no: 7080882578
+        </p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 R.S.D Public School | All Rights Reserved.
+    Developed by: Om Tiwari
+</footer>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slides img');
+    const totalSlides = slides.length;
+
+    function moveSlide(step) {
+        currentSlide += step;
+
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        } else if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        }
+
+        document.querySelector('.slides').style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    
+    setInterval(() => {
+    moveSlide(1);
+}, 6000);
+
+
+</script>
+
+</body>
+</html>

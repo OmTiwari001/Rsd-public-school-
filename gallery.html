@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Image Gallery</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #0073e6, #00c6ff);
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .gallery img {
+                width: 90%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="429023608_1051069899331823_1035463545075812407_n - 2025-03-08T154908.504.heic.jpg" alt="School Logo" class="logo">
+    School Image Gallery
+</header>
+
+<div class="gallery" id="gallery">
+    <!-- Images will be loaded from JavaScript -->
+</div>
+
+<!-- Lightbox for Viewing Images -->
+<div class="lightbox" id="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img">
+</div>
+
+<script>
+    // Array of image URLs from your hosting service
+    const imageUrls = [
+        "IMG20250308125637.jpg",
+        "IMG20250308124907.jpg",
+        "IMG20250308094756.jpg",
+        "IMG_20250308_130742.jpg"
+    ];
+
+    // Function to load images into the gallery
+    function loadGallery() {
+        const gallery = document.getElementById("gallery");
+
+        imageUrls.forEach(url => {
+            const img = document.createElement("img");
+            img.src = url;
+            img.onclick = function() {
+                openLightbox(url);
+            };
+            gallery.appendChild(img);
+        });
+    }
+
+    // Open the lightbox with the clicked image
+    function openLightbox(imageSrc) {
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    // Close the lightbox
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    // Load the gallery on page load
+    window.onload = loadGallery;
+</script>
+
+</body>
+</html>
